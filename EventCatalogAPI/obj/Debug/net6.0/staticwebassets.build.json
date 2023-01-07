@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "Hash": "wX+tnttaMmVjg/N/WXJF7Tg5+BaiNkuUTt96fGHwZEw=",
+  "Source": "EventCatalogAPI",
+  "BasePath": "_content/EventCatalogAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "EventCatalogAPI\\wwwroot",
+      "Source": "EventCatalogAPI",
+      "ContentRoot": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\EventCatalogAPI\\wwwroot\\",
+      "BasePath": "_content/EventCatalogAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\EventCatalogAPI\\wwwroot\\Pics\\1.jpg",
+      "SourceId": "EventCatalogAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\EventCatalogAPI\\wwwroot\\",
+      "BasePath": "_content/EventCatalogAPI",
+      "RelativePath": "Pics/1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Pics\\1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\EventCatalogAPI\\wwwroot\\Pics\\2.jpg",
+      "SourceId": "EventCatalogAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\EventCatalogAPI\\wwwroot\\",
+      "BasePath": "_content/EventCatalogAPI",
+      "RelativePath": "Pics/2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Pics\\2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\EventCatalogAPI\\wwwroot\\Pics\\3.jpg",
+      "SourceId": "EventCatalogAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\EventCatalogAPI\\wwwroot\\",
+      "BasePath": "_content/EventCatalogAPI",
+      "RelativePath": "Pics/3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Pics\\3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\EventCatalogAPI\\wwwroot\\Pics\\4.jpg",
+      "SourceId": "EventCatalogAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\EventCatalogAPI\\wwwroot\\",
+      "BasePath": "_content/EventCatalogAPI",
+      "RelativePath": "Pics/4.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Pics\\4.jpg"
+    }
+  ]
+}

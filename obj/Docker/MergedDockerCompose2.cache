@@ -1,0 +1,61 @@
+name: dockercompose904412883454977873
+services:
+  eventcatalogapi:
+    build:
+      context: C:\Users\srava\source\repos\Kalclasses\EventBrite\EventCatalogAPI
+      dockerfile: Dockerfile
+    container_name: eventbriteeventcatalogapi
+    depends_on:
+      mssqlserver:
+        condition: service_started
+    environment:
+      ConnectionString: Data Source=mssqlserver;Initial Catalog=EventCatalogDb;User
+        Id=sa;Password=EventCatalogApi(!);Connect Timeout=30;TrustServerCertificate=false;Encrypt=false;
+      ExternalBaseUrl: http://localhost:7130
+    image: eventbrite/eventcatalogapi
+    networks:
+      backend: null
+      frontend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "7130"
+      protocol: tcp
+  mssqlserver:
+    container_name: eventbritesqlserver
+    environment:
+      ACCEPT_EULA: "true"
+      MSSQL_SA_PASSWORD: EventCatalogApi(!)
+      SA_PASSWORD: EventCatalogApi(!)
+    image: mcr.microsoft.com/mssql/server:latest
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: "1429"
+      protocol: tcp
+  webmvc:
+    build:
+      context: C:\Users\srava\source\repos\Kalclasses\EventBrite\WebMvc
+      dockerfile: Dockerfile
+    container_name: webshop
+    depends_on:
+      eventcatalogapi:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      CatalogUrl: http://eventcatalogapi
+    image: eventbrite/webmvc
+    networks:
+      frontend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "7700"
+      protocol: tcp
+networks:
+  backend:
+    name: dockercompose904412883454977873_backend
+  frontend:
+    name: dockercompose904412883454977873_frontend

@@ -1,0 +1,55 @@
+{
+  "ContentRoots": [
+    "/src/wwwroot/"
+  ],
+  "Root": {
+    "Children": {
+      "Pics": {
+        "Children": {
+          "1.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "Pics/1.jpg"
+            },
+            "Patterns": null
+          },
+          "2.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "Pics/2.jpg"
+            },
+            "Patterns": null
+          },
+          "3.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "Pics/3.jpg"
+            },
+            "Patterns": null
+          },
+          "4.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "Pics/4.jpg"
+            },
+            "Patterns": null
+          }
+        },
+        "Asset": null,
+        "Patterns": null
+      }
+    },
+    "Asset": null,
+    "Patterns": [
+      {
+        "ContentRootIndex": 0,
+        "Pattern": "**",
+        "Depth": 0
+      }
+    ]
+  }
+}

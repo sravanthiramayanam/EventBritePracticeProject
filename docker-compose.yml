@@ -1,0 +1,51 @@
+version: '3.4'
+networks:
+  frontend:
+  backend:
+
+services:
+  eventcatalogapi:
+    image: eventbrite/eventcatalogapi
+    build:
+      context: .\EventCatalogAPI
+      dockerfile: Dockerfile
+    environment:
+      ConnectionString:  "Data Source=mssqlserver;Initial Catalog=EventCatalogDb;User Id=sa;Password=EventCatalogApi(!);Connect Timeout=30;TrustServerCertificate=false;Encrypt=false;"
+      ExternalBaseUrl:  http://localhost:7130
+    ports:
+      - "7130:80"
+    container_name: eventbriteeventcatalogapi
+    networks:
+      -  frontend
+      -  backend
+    depends_on:
+      -  mssqlserver
+  webmvc:
+    image: eventbrite/webmvc
+    build:
+      context: .\WebMvc
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      CatalogUrl: http://eventcatalogapi
+      
+    ports:
+      - "7700:80"
+    container_name: eventwebshop
+    networks:
+      - frontend
+    depends_on:
+      - eventcatalogapi
+     
+
+  mssqlserver:
+    image: "mcr.microsoft.com/mssql/server:latest"
+    environment: 
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: EventCatalogApi(!)
+      SA_PASSWORD:  EventCatalogApi(!)
+    ports:
+      -  "1429:1433"
+    container_name: eventbritesqlserver
+    networks:
+      -  backend

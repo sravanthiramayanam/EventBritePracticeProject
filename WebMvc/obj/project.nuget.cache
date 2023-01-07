@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "JtyLm/gekc/fj0TemvrUSmFzRtceWFQW7B3AH8XvJ5BrrJeM38MuUVe8XNjG7hPUXK56zq2oyWCWcNlGe/sAAg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\WebMvc\\WebMvc.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\srava\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512",
+    "C:\\Users\\srava\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
