@@ -21,7 +21,7 @@ services:
       ConnectionString: Data Source=mssqlserver;Initial Catalog=EventCatalogDb;User
         Id=sa;Password=EventCatalogApi(!);Connect Timeout=30;TrustServerCertificate=false;Encrypt=false;
       DOTNET_USE_POLLING_FILE_WATCHER: "1"
-      ExternalBaseUrl: https://localhost:7130
+      ExternalBaseUrl: http://localhost:7130
       NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
     image: eventbrite/eventcatalogapi:dev
     labels:
@@ -94,6 +94,123 @@ services:
       target: 1433
       published: "1429"
       protocol: tcp
+  tokenserver:
+    build:
+      context: C:\Users\srava\source\repos\Kalclasses\EventBrite\TokenServiceAPI
+      dockerfile: Dockerfile
+    container_name: eventbritetokenservice
+    depends_on:
+      tokensqlserver:
+        condition: service_started
+    environment:
+      ConnectionString: Data Source=tokensqlserver;Initial Catalog=EventTokenServiceDb;User
+        Id=sa;Password=EventCatalogApi(!);Connect Timeout=30;TrustServerCertificate=false;Encrypt=false;
+      MvcClient: http://localhost:7700
+    image: eventbrite/tokenapi
+    networks:
+      backend: null
+      frontend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "7140"
+      protocol: tcp
+  tokensqlserver:
+    container_name: eventbritetokensqlserver
+    environment:
+      ACCEPT_EULA: "true"
+      MSSQL_SA_PASSWORD: EventCatalogApi(!)
+      SA_PASSWORD: EventCatalogApi(!)
+    image: mcr.microsoft.com/mssql/server:latest
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: "1428"
+      protocol: tcp
+  webmvc:
+    build:
+      context: C:\Users\srava\source\repos\Kalclasses\EventBrite\WebMvc
+      dockerfile: Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: WebMvc
+      target: base
+    container_name: eventwebshop
+    depends_on:
+      eventcatalogapi:
+        condition: service_started
+      tokenserver:
+        condition: service_started
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      CallBackUrl: http://localhost:7700
+      CatalogUrl: http://eventcatalogapi
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      IdentityUrl: http://192.168.5.150:7140
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: eventbrite/webmvc:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  "/app/bin/Debug/net6.0/WebMvc.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      frontend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "7700"
+      protocol: tcp
+    tty: true
+    volumes:
+    - type: bind
+      source: C:\Users\srava\source\repos\Kalclasses\EventBrite\WebMvc
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\srava\source\repos\Kalclasses\EventBrite\WebMvc
+      target: /src
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\srava\vsdbg\vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\srava\.nuget\packages\
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages
+      target: /root/.nuget/fallbackpackages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\srava\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\srava\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
 networks:
   backend:
     name: dockercompose904412883454977873_backend

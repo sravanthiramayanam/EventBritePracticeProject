@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 //using Microsoft.AspNetCore.Mvc.RazorPages;
 using WebMvc.Services;
 using WebMvc.ViewModels;
@@ -14,9 +15,10 @@ namespace WebMvc.Controllers
         }
         public async Task<IActionResult> Index(int? page,int? organizerFilterApplied,int? categoryFilterApplied )
         {
-            var itemsOnPage = 10;
+            var itemsOnPage = 2;
             var eventCatalog= await _service.GetEventsAsync (page ?? 0, itemsOnPage,organizerFilterApplied,categoryFilterApplied);
             //var event = await _service.GetEventItemsAsync (page ?? 0, itemsOnPage);
+            
             var vm = new CatalogIndexViewModel
             {
                 Organizers = await _service.GetEventOrganizersAsync(),
@@ -34,6 +36,11 @@ namespace WebMvc.Controllers
 
             };
             return View(vm);
+        }
+        [Authorize]
+        public IActionResult About()
+        {
+            return View();
         }
     }
 }

@@ -1,5 +1,6 @@
 C:\Users\srava\source\repos\Kalclasses\EventBrite\EventCatalogAPI\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\srava\source\repos\Kalclasses\EventBrite\EventCatalogAPI\bin\Debug\net6.0\appsettings.json
+C:\Users\srava\source\repos\Kalclasses\EventBrite\EventCatalogAPI\bin\Debug\net6.0\EventCatalogAPI.staticwebassets.runtime.json
 C:\Users\srava\source\repos\Kalclasses\EventBrite\EventCatalogAPI\bin\Debug\net6.0\EventCatalogAPI.exe
 C:\Users\srava\source\repos\Kalclasses\EventBrite\EventCatalogAPI\bin\Debug\net6.0\EventCatalogAPI.deps.json
 C:\Users\srava\source\repos\Kalclasses\EventBrite\EventCatalogAPI\bin\Debug\net6.0\EventCatalogAPI.runtimeconfig.json
@@ -80,4 +81,3 @@ C:\Users\srava\source\repos\Kalclasses\EventBrite\EventCatalogAPI\obj\Debug\net6
 C:\Users\srava\source\repos\Kalclasses\EventBrite\EventCatalogAPI\obj\Debug\net6.0\EventCatalogAPI.pdb
 C:\Users\srava\source\repos\Kalclasses\EventBrite\EventCatalogAPI\obj\Debug\net6.0\EventCatalogAPI.genruntimeconfig.cache
 C:\Users\srava\source\repos\Kalclasses\EventBrite\EventCatalogAPI\obj\Debug\net6.0\ref\EventCatalogAPI.dll
-C:\Users\srava\source\repos\Kalclasses\EventBrite\EventCatalogAPI\bin\Debug\net6.0\EventCatalogAPI.staticwebassets.runtime.json

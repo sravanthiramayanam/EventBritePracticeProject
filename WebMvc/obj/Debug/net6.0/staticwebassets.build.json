@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "X7+UEgWjDMmHJmE6MqvMysTTMM/9zNvfX0RM8kgvJiM=",
+  "Hash": "i3sAA4An8HyzWBGtaM9VwGvRFP2vyZ20Ywp9b7I/4DE=",
   "Source": "WebMvc",
   "BasePath": "_content/WebMvc",
   "Mode": "Default",
@@ -918,6 +918,23 @@
       "OriginalItemSpec": "wwwroot\\images\\brand_dark.png"
     },
     {
+      "Identity": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\WebMvc\\wwwroot\\images\\Business.jpg",
+      "SourceId": "WebMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\WebMvc\\wwwroot\\",
+      "BasePath": "_content/WebMvc",
+      "RelativePath": "images/Business.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Business.jpg"
+    },
+    {
       "Identity": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\WebMvc\\wwwroot\\images\\cart.png",
       "SourceId": "WebMvc",
       "SourceType": "Discovered",
@@ -1222,6 +1239,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\down_arrow.png"
+    },
+    {
+      "Identity": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\WebMvc\\wwwroot\\images\\Event.jpg",
+      "SourceId": "WebMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\WebMvc\\wwwroot\\",
+      "BasePath": "_content/WebMvc",
+      "RelativePath": "images/Event.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Event.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\WebMvc\\wwwroot\\images\\EventLogo.jpg",
+      "SourceId": "WebMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\WebMvc\\wwwroot\\",
+      "BasePath": "_content/WebMvc",
+      "RelativePath": "images/EventLogo.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\EventLogo.jpg"
     },
     {
       "Identity": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\WebMvc\\wwwroot\\images\\f_icon.png",
@@ -1749,6 +1800,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\star.psd"
+    },
+    {
+      "Identity": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\WebMvc\\wwwroot\\images\\TheaterArts.jpg",
+      "SourceId": "WebMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\WebMvc\\wwwroot\\",
+      "BasePath": "_content/WebMvc",
+      "RelativePath": "images/TheaterArts.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\TheaterArts.jpg"
     },
     {
       "Identity": "C:\\Users\\srava\\source\\repos\\Kalclasses\\EventBrite\\WebMvc\\wwwroot\\images\\tw.psd",

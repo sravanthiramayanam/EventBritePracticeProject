@@ -11,7 +11,7 @@ services:
     environment:
       ConnectionString: Data Source=mssqlserver;Initial Catalog=EventCatalogDb;User
         Id=sa;Password=EventCatalogApi(!);Connect Timeout=30;TrustServerCertificate=false;Encrypt=false;
-      ExternalBaseUrl: https://localhost:7130
+      ExternalBaseUrl: http://localhost:7130
     image: eventbrite/eventcatalogapi
     networks:
       backend: null
@@ -34,6 +34,64 @@ services:
     - mode: ingress
       target: 1433
       published: "1429"
+      protocol: tcp
+  tokenserver:
+    build:
+      context: C:\Users\srava\source\repos\Kalclasses\EventBrite\TokenServiceAPI
+      dockerfile: Dockerfile
+    container_name: eventbritetokenservice
+    depends_on:
+      tokensqlserver:
+        condition: service_started
+    environment:
+      ConnectionString: Data Source=tokensqlserver;Initial Catalog=EventTokenServiceDb;User
+        Id=sa;Password=EventCatalogApi(!);Connect Timeout=30;TrustServerCertificate=false;Encrypt=false;
+      MvcClient: http://localhost:7700
+    image: eventbrite/tokenapi
+    networks:
+      backend: null
+      frontend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "7140"
+      protocol: tcp
+  tokensqlserver:
+    container_name: eventbritetokensqlserver
+    environment:
+      ACCEPT_EULA: "true"
+      MSSQL_SA_PASSWORD: EventCatalogApi(!)
+      SA_PASSWORD: EventCatalogApi(!)
+    image: mcr.microsoft.com/mssql/server:latest
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: "1428"
+      protocol: tcp
+  webmvc:
+    build:
+      context: C:\Users\srava\source\repos\Kalclasses\EventBrite\WebMvc
+      dockerfile: Dockerfile
+    container_name: eventwebshop
+    depends_on:
+      eventcatalogapi:
+        condition: service_started
+      tokenserver:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      CallBackUrl: http://localhost:7700
+      CatalogUrl: http://eventcatalogapi
+      IdentityUrl: http://192.168.5.150:7140
+    image: eventbrite/webmvc
+    networks:
+      frontend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "7700"
       protocol: tcp
 networks:
   backend:
